@@ -623,7 +623,7 @@
             // if ThemeSet not in config for some reason
             if (!themename)
             {
-                themename = 'carbon';
+                themename = 'es-theme-carbon';
             }
 
             // we might not have known the system on the first call
@@ -687,14 +687,14 @@
                     if (self.themes['carbon'] &&
                         self.themes['carbon'].path)
                     {
-                        setThemeSystemView(self.themes['carbon'], system_name, view_name);
-                        deferred.resolve(self.themes['carbon']);
+                        setThemeSystemView(self.themes['es-theme-carbon'], system_name, view_name);
+                        deferred.resolve(self.themes['es-theme-carbon']);
                     }
                     else
                     {
                         $http.get('svr/theme.php', {
                         cache: false,
-                        params: { theme: 'carbon', scan: scan }
+                        params: { theme: 'es-theme-carbon', scan: scan }
                         })
                         .then(function onSuccess(response)
                         {
